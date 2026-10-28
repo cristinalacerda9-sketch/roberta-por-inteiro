@@ -1,0 +1,120 @@
+backend:
+  name: github
+  repo: cristinalacerda9-sketch/roberta-por-inteiro
+  branch: main
+media_folder: images/uploads
+public_folder: /images/uploads
+locale: pt
+collections:
+  - name: site
+    label: Meu site
+    files:
+      - label: Perfil e Quem sou eu
+        name: perfil
+        file: content/perfil.json
+        fields:
+          - {label: "Nome do site (no topo)", name: titulo, widget: string}
+          - {label: "Linha abaixo do nome", name: subtitulo, widget: string}
+          - {label: "Seu nome (no perfil)", name: nome, widget: string}
+          - {label: "Frase de status", name: status, widget: string, required: false}
+          - {label: "Foto de perfil", name: foto, widget: image, required: false}
+          - {label: "Instagram (sem o @)", name: instagram, widget: string, required: false}
+          - {label: "WhatsApp (só números, com 55 e DDD)", name: whatsapp, widget: string, required: false, hint: "Exemplo: 5516999999999"}
+          - {label: "Quem sou eu", name: sobre, widget: text, hint: "Separe os parágrafos com uma linha em branco"}
+          - {label: "Etiquetas", name: tags, widget: list, required: false, field: {label: Etiqueta, name: etiqueta, widget: string}}
+          - {label: "Aviso sobre as práticas", name: aviso, widget: text, required: false}
+      - label: Diário
+        name: diario
+        file: content/diario.json
+        fields:
+          - label: Textos
+            name: itens
+            widget: list
+            label_singular: Item
+            summary: "{{fields.titulo}}"
+            fields:
+              - {label: "Título", name: titulo, widget: string}
+              - {label: "Data", name: data, widget: datetime, date_format: "DD/MM/YYYY", time_format: false, format: "YYYY-MM-DD"}
+              - {label: "Comunidade (categoria)", name: categoria, widget: string, hint: "Escreva igual ao nome de uma comunidade, ou crie uma nova"}
+              - {label: "Foto", name: imagem, widget: image, required: false}
+              - {label: "Texto", name: texto, widget: text, hint: "Separe os parágrafos com uma linha em branco"}
+      - label: Álbuns de arte
+        name: albuns
+        file: content/albuns.json
+        fields:
+          - label: Álbuns
+            name: itens
+            widget: list
+            label_singular: Item
+            summary: "{{fields.titulo}}"
+            fields:
+              - {label: "Nome do álbum", name: titulo, widget: string}
+              - {label: "Fotos", name: fotos, widget: list, required: false, field: {label: Foto, name: foto, widget: image}}
+      - label: Vídeos
+        name: videos
+        file: content/videos.json
+        fields:
+          - label: Vídeos
+            name: itens
+            widget: list
+            label_singular: Item
+            summary: "{{fields.titulo}}"
+            fields:
+              - {label: "Título", name: titulo, widget: string}
+              - {label: "Link (YouTube ou Instagram)", name: link, widget: string}
+      - label: Música
+        name: musica
+        file: content/musica.json
+        fields:
+          - {label: "Título", name: titulo, widget: string}
+          - {label: "Link da playlist (Spotify ou YouTube)", name: link, widget: string, required: false}
+      - label: Comunidades
+        name: comunidades
+        file: content/comunidades.json
+        fields:
+          - label: Comunidades
+            name: itens
+            widget: list
+            label_singular: Item
+            summary: "{{fields.nome}}"
+            fields:
+              - {label: "Ícone (um emoji)", name: icone, widget: string, required: false}
+              - {label: "Nome", name: nome, widget: string}
+      - label: Depoimentos
+        name: depoimentos
+        file: content/depoimentos.json
+        fields:
+          - label: Depoimentos
+            name: itens
+            widget: list
+            label_singular: Item
+            summary: "{{fields.autor}}"
+            fields:
+              - {label: "Depoimento", name: texto, widget: text}
+              - {label: "Nome de quem autorizou", name: autor, widget: string}
+      - label: Recados aprovados
+        name: recados
+        file: content/recados.json
+        fields:
+          - label: Recados
+            name: itens
+            widget: list
+            label_singular: Item
+            summary: "{{fields.nome}}"
+            fields:
+              - {label: "Nome", name: nome, widget: string}
+              - {label: "Mensagem", name: mensagem, widget: text}
+      - label: Novas seções
+        name: secoes
+        file: content/secoes.json
+        fields:
+          - label: Seções
+            name: itens
+            widget: list
+            label_singular: Item
+            summary: "{{fields.titulo}}"
+            fields:
+              - {label: "Título da seção", name: titulo, widget: string}
+              - {label: "Texto", name: texto, widget: text, required: false}
+              - {label: "Fotos", name: imagens, widget: list, required: false, field: {label: Foto, name: foto, widget: image}}
+              - {label: "Link de vídeo ou música (YouTube/Spotify)", name: video, widget: string, required: false}

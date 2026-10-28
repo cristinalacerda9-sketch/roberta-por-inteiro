@@ -1,0 +1,28 @@
+{
+  "itens": [
+    {
+      "icone": "💆",
+      "nome": "EFT"
+    },
+    {
+      "icone": "🧍",
+      "nome": "Análise Corporal"
+    },
+    {
+      "icone": "💗",
+      "nome": "Emocional"
+    },
+    {
+      "icone": "🏠",
+      "nome": "Família"
+    },
+    {
+      "icone": "🧠",
+      "nome": "Comportamento"
+    },
+    {
+      "icone": "🙏",
+      "nome": "Fé e espiritualidade"
+    }
+  ]
+}
