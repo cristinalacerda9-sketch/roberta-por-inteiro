@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌸%3C/text%3E%3C/svg%3E">
+<title>Roberta por Inteiro — diário, arte e EFT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#cfe0f3;--card:#ffffff;--head:#e3ecf7;--accent:#d6336c;--accent2:#7b2d8e;--green:#a3206b;
+  --text:#2f3a4a;--muted:#667489;--border:#b4c8df;--link:#a3206b;
+  color-scheme:light;box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--green:#b0468f;
+    --bg:#1b2030;--card:#252b3d;--head:#2f3650;--accent:#f06595;--accent2:#b36bd1;
+    --text:#e8ebf3;--muted:#9aa5bd;--border:#3a4260;--link:#f783ac;color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{--green:#b0468f;
+  --bg:#1b2030;--card:#252b3d;--head:#2f3650;--accent:#f06595;--accent2:#b36bd1;
+  --text:#e8ebf3;--muted:#9aa5bd;--border:#3a4260;--link:#f783ac;color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Nunito',Verdana,Arial,sans-serif;font-size:15px;line-height:1.5}
+a{color:var(--link);text-decoration:none}a:hover{text-decoration:underline}
+header{background:linear-gradient(90deg,var(--accent),var(--accent2));border-bottom:4px solid #f7b6d2;color:#fff;padding:10px 16px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px}
+header h1{margin:0;font-size:26px;font-weight:800;letter-spacing:-.5px;text-transform:lowercase}
+header .sub{font-size:13px;font-weight:700}
+header nav{display:flex;flex-wrap:wrap;gap:4px 16px;font-weight:700;font-size:14px}
+header nav a{color:#fff}
+.wrap{max-width:1040px;margin:14px auto;padding:0 10px;display:grid;grid-template-columns:200px minmax(0,1fr) 240px;gap:12px;align-items:start}
+.box{background:var(--card);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:12px}
+.box>h2{margin:0;border-left:4px solid var(--green);padding:7px 12px;background:var(--head);border-bottom:1px solid var(--border);font-size:15px;font-weight:800;color:var(--accent2);display:flex;justify-content:space-between;align-items:center}
+.box>h2 small{font-weight:400;color:var(--muted);font-size:12px}
+.in{padding:10px 12px}
+.me{text-align:center}
+.avatar{width:120px;height:120px;margin:4px auto 8px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#ffd3e3,var(--accent) 60%,var(--accent2));display:grid;place-items:center;font-size:54px;border:3px solid var(--card);box-shadow:0 0 0 2px var(--border)}
+.me h3{margin:0;font-size:18px}
+.status{color:var(--muted);font-size:13px;font-style:italic;margin:2px 0 8px}
+.menu{list-style:none;margin:0;padding:0}
+.menu a{display:block;padding:6px 12px;border-top:1px solid var(--border);font-weight:700}
+.menu a:hover{background:var(--head);text-decoration:none}
+.stats{display:flex;justify-content:space-around;font-size:12px;color:var(--muted);padding:6px 4px}
+.stats b{display:block;color:var(--accent);font-size:16px}
+.about p{margin:0 0 8px}
+.tags span{display:inline-block;background:color-mix(in srgb,var(--green) 16%,var(--card));border:1px solid var(--green);border-radius:12px;padding:1px 10px;font-size:12px;margin:0 4px 4px 0}
+.note{font-size:12px;color:var(--muted)}
+.post{padding:10px 12px;border-top:1px solid var(--border)}
+.post:first-of-type{border-top:0}
+.post h3{margin:0 0 2px;font-size:16px}
+.post .meta{font-size:12px;color:var(--muted)}
+.albums{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:12px}
+.album{text-align:center;font-size:13px;font-weight:700}
+.album i{display:block;aspect-ratio:1;border-radius:6px;border:3px solid var(--card);box-shadow:0 0 0 1px var(--border);margin-bottom:4px}
+.album span{display:block;font-weight:400;font-size:11px;color:var(--muted)}
+.a1 i{background:linear-gradient(135deg,#ff9a8b,#ff6a88)}
+.a2 i{background:linear-gradient(135deg,#a18cd1,#fbc2eb)}
+.a3 i{background:linear-gradient(135deg,#f9c5e0,#c9a7e8)}
+.a4 i{background:linear-gradient(135deg,#fccb90,#d57eeb)}
+.a5 i{background:linear-gradient(135deg,#f6d365,#fda085)}
+.a6 i{background:linear-gradient(135deg,#667eea,#764ba2)}
+.vids{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:12px}
+.vid{aspect-ratio:9/16;border-radius:8px;background:linear-gradient(160deg,var(--accent2),#2b1b4a);color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:8px;font-size:12px;font-weight:700;position:relative}
+.vid::before{content:"▶";position:absolute;top:42%;left:50%;transform:translate(-50%,-50%);font-size:26px;opacity:.85}
+.scrap{display:flex;gap:10px;padding:10px 12px;border-top:1px solid var(--border)}
+.scrap .pic{flex:none;width:44px;height:44px;border-radius:50%;background:var(--head);border:1px solid var(--border);display:grid;place-items:center;font-size:20px}
+.scrap b{font-size:13px}
+.scrap p{margin:0;font-size:14px}
+form.new,.addsec{padding:10px 12px;border-top:1px solid var(--border);display:flex;flex-wrap:wrap;gap:8px}
+input,textarea{font:inherit;color:var(--text);background:var(--card);border:1px solid var(--border);border-radius:6px;padding:6px 8px;flex:1 1 160px;min-width:0}
+button{font:inherit;font-weight:700;color:#fff;background:var(--accent);border:0;border-radius:6px;padding:6px 14px;cursor:pointer}
+button:hover{filter:brightness(1.08)}
+:focus-visible{outline:2px solid var(--accent2);outline-offset:2px}
+.comm{list-style:none;margin:0;padding:6px 12px 10px}
+.comm li{display:flex;gap:8px;align-items:center;padding:5px 0;font-size:14px;font-weight:700}
+.comm li i{flex:none;width:34px;height:34px;border-radius:6px;display:grid;place-items:center;background:color-mix(in srgb,var(--green) 16%,var(--card));border:1px solid var(--green);font-style:normal}
+.comm small{display:block;font-weight:400;color:var(--muted);font-size:11px}
+.player{margin:10px 12px;border-radius:8px;background:linear-gradient(135deg,var(--accent2),#3a1a55);color:#fff;padding:10px}
+.player ol{margin:6px 0 0;padding-left:18px;font-size:13px}
+.depo{padding:10px 12px;border-top:1px solid var(--border);font-size:14px}
+.depo:first-of-type{border-top:0}
+.depo cite{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+.custom [contenteditable]{padding:10px 12px;min-height:60px}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:6px 12px 24px}
+@media (max-width:820px){.wrap{grid-template-columns:1fr}.albums,.vids{grid-template-columns:repeat(2,1fr)}}
+
+.avatar{overflow:hidden}
+.avatar img{width:114px;height:114px;border-radius:50%;object-fit:cover;display:block}
+.post img{max-width:100%;border-radius:8px;margin:8px 0}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px;padding:0 12px 12px}
+.gal img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:6px;border:1px solid var(--border)}
+.albt{padding:10px 12px 6px;font-weight:800}
+.empty{padding:12px;margin:0;color:var(--muted);font-size:14px}
+.emb{padding:0 12px 12px}.emb iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:8px}
+.vlist{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;padding:12px}
+.vlist .emb{padding:0}.vlist a.vid{aspect-ratio:16/9;color:#fff;text-decoration:none}
+.sent{padding:4px 12px 8px;margin:0;color:var(--accent2);font-weight:700}
+.comm li{cursor:pointer}
+.btn{display:block;text-align:center;color:#fff;background:var(--green);border-radius:6px;padding:7px 14px;font-weight:700}
+.btn:hover{text-decoration:none;filter:brightness(1.08)}
+</style>
+</head>
+<body>
+<header>
+  <div><h1 id="h1">roberta por inteiro</h1><div class="sub" id="sub"></div></div>
+  <nav><a href="#inicio">Início</a><a href="#diario">Diário</a><a href="#fotos">Álbuns</a><a href="#videos">Vídeos</a><a href="#musica">Música</a><a href="#recados">Recados</a><a href="#contato">Agendar</a></nav>
+</header>
+<div class="wrap" id="inicio">
+  <aside>
+    <div class="box me">
+      <div class="in"><div class="avatar" id="av" aria-hidden="true">🌸</div><h3 id="nome"></h3><p class="status" id="st"></p><p style="margin:0 0 8px;font-weight:700" id="ig"></p></div>
+      <div class="stats"><div><b id="n1">0</b>textos</div><div><b id="n2">0</b>álbuns</div><div><b id="n3">0</b>recados</div></div>
+      <ul class="menu"><li><a href="#inicio">Perfil</a></li><li><a href="#recados">Recados</a></li><li><a href="#fotos">Álbuns</a></li><li><a href="#videos">Vídeos</a></li><li><a href="#depoimentos">Depoimentos</a></li><li><a href="#comunidades">Comunidades</a></li><li><a href="#musica">Música</a></li></ul>
+    </div>
+    <div class="box" id="contato"><h2>Agendar sessão</h2><div class="in"><p style="margin:0 0 8px">EFT e Análise Corporal, presencial ou online.</p><div id="wa"></div></div></div>
+  </aside>
+  <main>
+    <div class="box about"><h2>Quem sou eu</h2><div class="in"><div id="sobre"></div><div class="tags" id="tags"></div><p class="note" id="aviso"></p></div></div>
+    <div class="box" id="diario"><h2><span id="dt">Meu diário</span><small id="dx"></small></h2><div id="posts"></div></div>
+    <div class="box" id="fotos"><h2>Álbuns de arte</h2><div id="albs"></div></div>
+    <div class="box" id="videos"><h2>Meus vídeos</h2><div id="vids"></div></div>
+    <div class="box" id="recados"><h2>Recados</h2>
+      <form class="new" id="rf" name="recados" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="recados">
+        <p hidden><label>Não preencha <input name="bot-field"></label></p>
+        <input name="nome" placeholder="Seu nome" aria-label="Seu nome" required maxlength="60">
+        <input name="mensagem" placeholder="Deixe um recado carinhoso" aria-label="Recado" required maxlength="400" style="flex:3 1 220px">
+        <button type="submit">Enviar</button>
+      </form>
+      <div id="rmsg"></div><div id="scraps"></div>
+    </div>
+    <div id="secs"></div>
+  </main>
+  <aside>
+    <div class="box" id="comunidades"><h2>Comunidades <small>categorias</small></h2><ul class="comm" id="cl"></ul></div>
+    <div class="box" id="musica"><h2 id="mt">Minha playlist</h2><div id="mb"></div></div>
+    <div class="box" id="depoimentos"><h2>Depoimentos</h2><div id="dp"></div></div>
+  </aside>
+</div>
+<footer>© Roberta C. Lacerda · EFT e Análise Corporal</footer>
+<script>
+const $=s=>document.querySelector(s);
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const ok=u=>/^(https?:\/\/|\/)/i.test(u||'')?esc(u):'';
+const paras=t=>String(t||'').split(/\n\s*\n/).map(x=>x.trim()).filter(Boolean).map(x=>'<p>'+esc(x).replace(/\n/g,'<br>')+'</p>').join('');
+const get=f=>fetch('content/'+f+'.json',{cache:'no-cache'}).then(r=>r.json()).catch(()=>({}));
+const L=o=>(o&&o.itens)||[];
+const norm=s=>String(s||'').trim().toLowerCase();
+const fd=d=>{const x=new Date(String(d||'').slice(0,10)+'T12:00:00');return isNaN(x)?'':x.toLocaleDateString('pt-BR',{day:'numeric',month:'long',year:'numeric'})};
+const gal=a=>(a||[]).map(f=>ok(f)?'<a href="'+ok(f)+'" target="_blank" rel="noopener"><img src="'+ok(f)+'" alt="" loading="lazy"></a>':'').join('');
+function embed(l){l=l||'';let m=l.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/shorts\/)([\w-]{11})/);
+  if(m)return '<iframe src="https://www.youtube.com/embed/'+m[1]+'" allowfullscreen loading="lazy" title="Vídeo"></iframe>';
+  m=l.match(/youtube\.com\/playlist\?list=([\w-]+)/);
+  if(m)return '<iframe src="https://www.youtube.com/embed/videoseries?list='+m[1]+'" allowfullscreen loading="lazy" title="Playlist"></iframe>';
+  m=l.match(/open\.spotify\.com\/(?:embed\/)?(playlist|album|track|episode|show)\/(\w+)/);
+  if(m)return '<iframe src="https://open.spotify.com/embed/'+m[1]+'/'+m[2]+'" style="height:152px;aspect-ratio:auto" allow="encrypted-media" loading="lazy" title="Spotify"></iframe>';
+  return ''}
+(async()=>{
+const [P,D,A,V,M,C,T,R,S]=await Promise.all(['perfil','diario','albuns','videos','musica','comunidades','depoimentos','recados','secoes'].map(get));
+const p=P||{};
+document.title=(p.titulo||'Roberta por Inteiro')+' — '+(p.nome||'');
+$('#h1').textContent=p.titulo||'';$('#sub').textContent=p.subtitulo||'';$('#nome').textContent=p.nome||'';
+$('#st').textContent=p.status?'“'+p.status+'”':'';
+if(ok(p.foto))$('#av').innerHTML='<img src="'+ok(p.foto)+'" alt="">';
+const ig=String(p.instagram||'').replace('@','').trim();
+$('#ig').innerHTML=ig?'<a href="https://instagram.com/'+encodeURIComponent(ig)+'" target="_blank" rel="noopener">@'+esc(ig)+'</a>':'';
+$('#sobre').innerHTML=paras(p.sobre);
+$('#tags').innerHTML=(p.tags||[]).map(t=>'<span>'+esc(t)+'</span>').join('');
+$('#aviso').textContent=p.aviso||'';
+const wn=String(p.whatsapp||'').replace(/\D/g,'');
+$('#wa').innerHTML=wn?'<a class="btn" href="https://wa.me/'+wn+'" target="_blank" rel="noopener">Chamar no WhatsApp</a>':'<p class="note" style="margin:0">Em breve você poderá agendar por aqui.</p>';
+const posts=L(D).slice().sort((a,b)=>String(b.data).localeCompare(String(a.data)));
+let cat='';
+function drawPosts(){
+  const f=cat?posts.filter(x=>norm(x.categoria)===norm(cat)):posts;
+  $('#dx').innerHTML=cat?'<a href="#diario" id="all">ver todos</a>':'';
+  if(cat)$('#all').onclick=e=>{e.preventDefault();cat='';drawPosts()};
+  $('#dt').textContent=cat?'Diário: '+cat:'Meu diário';
+  $('#posts').innerHTML=f.length?f.map(x=>'<div class="post"><h3>'+esc(x.titulo)+'</h3><div class="meta">'+[fd(x.data),x.categoria].filter(Boolean).map(esc).join(' · ')+'</div>'+(ok(x.imagem)?'<img src="'+ok(x.imagem)+'" alt="">':'')+paras(x.texto)+'</div>').join(''):'<p class="empty">Nenhum texto por aqui ainda.</p>';
+}
+drawPosts();
+const albs=L(A);
+$('#albs').innerHTML=albs.length?albs.map(a=>'<div class="albt">'+esc(a.titulo)+'</div><div class="gal">'+gal(a.fotos)+'</div>').join(''):'<p class="empty">Os álbuns chegam em breve.</p>';
+const vids=L(V);
+$('#vids').innerHTML=vids.length?'<div class="vlist">'+vids.map(v=>{const e=embed(v.link);return e?'<div><div class="emb">'+e+'</div><b style="font-size:13px">'+esc(v.titulo)+'</b></div>':'<a class="vid" href="'+ok(v.link)+'" target="_blank" rel="noopener">'+esc(v.titulo)+'</a>'}).join('')+'</div>':'<p class="empty">Os vídeos chegam em breve.</p>';
+const m=M||{};
+$('#mt').textContent=m.titulo||'Minha playlist';
+const me=embed(m.link);
+$('#mb').innerHTML=me?'<div class="emb" style="padding:10px 12px">'+me+'</div>':(ok(m.link)?'<p class="in"><a href="'+ok(m.link)+'" target="_blank" rel="noopener">Ouvir a playlist</a></p>':'<p class="empty">A playlist chega em breve.</p>');
+const cm=L(C).slice(),known=cm.map(c=>norm(c.nome));
+posts.forEach(x=>{const k=norm(x.categoria);if(k&&!known.includes(k)){known.push(k);cm.push({icone:'📌',nome:String(x.categoria).trim()})}});
+$('#cl').innerHTML=cm.map(c=>'<li role="button" tabindex="0" data-c="'+esc(c.nome)+'"><i>'+esc(c.icone||'📌')+'</i><span>'+esc(c.nome)+'<small>'+posts.filter(x=>norm(x.categoria)===norm(c.nome)).length+' texto(s)</small></span></li>').join('');
+const pick=e=>{const li=e.target.closest('li');if(!li||(e.key&&e.key!=='Enter'))return;cat=li.dataset.c;drawPosts();$('#diario').scrollIntoView({behavior:'smooth'})};
+$('#cl').onclick=pick;$('#cl').onkeydown=pick;
+const dep=L(T);
+$('#dp').innerHTML=dep.length?dep.map(d=>'<div class="depo">“'+esc(d.texto)+'”<cite>'+esc(d.autor)+'</cite></div>').join(''):'<p class="empty">Em breve, relatos de quem já passou pelas sessões.</p>';
+const rec=L(R);
+$('#scraps').innerHTML=rec.slice().reverse().map(r=>'<div class="scrap"><div class="pic">🌸</div><div><b>'+esc(r.nome)+'</b><p>'+esc(r.mensagem)+'</p></div></div>').join('');
+$('#n1').textContent=posts.length;$('#n2').textContent=albs.length;$('#n3').textContent=rec.length;
+const secs=L(S);
+$('#secs').innerHTML=secs.map((s,i)=>{const e=embed(s.video);return '<div class="box" id="sec'+i+'"><h2>'+esc(s.titulo)+'</h2><div class="in">'+paras(s.texto)+'</div>'+((s.imagens||[]).length?'<div class="gal">'+gal(s.imagens)+'</div>':'')+(e?'<div class="emb">'+e+'</div>':'')+'</div>'}).join('');
+$('.menu').insertAdjacentHTML('beforeend',secs.map((s,i)=>'<li><a href="#sec'+i+'">'+esc(s.titulo)+'</a></li>').join(''));
+$('#rf').onsubmit=async e=>{e.preventDefault();const f=e.target;
+  try{const r=await fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(f)).toString()});
+  if(!r.ok)throw 0;f.reset();$('#rmsg').innerHTML='<p class="sent">Recebi seu recado com carinho! Ele aparece aqui depois que eu aprovar.</p>'}
+  catch(_){$('#rmsg').innerHTML='<p class="sent">Não consegui enviar agora. Tente de novo em instantes.</p>'}};
+})();
+</script>
+</body>
+</html>
